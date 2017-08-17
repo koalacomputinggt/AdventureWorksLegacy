@@ -1,0 +1,11 @@
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksLegacy.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksLegacy.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksBLL.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksModel.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksDAL.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksDAL.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksBLL.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksModel.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.pdb

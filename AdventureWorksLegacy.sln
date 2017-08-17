@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksLegacy", "AdventureWorksLegacy\AdventureWorksLegacy.csproj", "{D01245E4-EF76-4415-B171-3693BBF6EE4B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksModel", "AdventureWorksModel\AdventureWorksModel.csproj", "{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksDAL", "AdventureWorksDAL\AdventureWorksDAL.csproj", "{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksBLL", "AdventureWorksBLL\AdventureWorksBLL.csproj", "{E778977E-9510-417F-96B1-643DF1544B98}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D01245E4-EF76-4415-B171-3693BBF6EE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01245E4-EF76-4415-B171-3693BBF6EE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01245E4-EF76-4415-B171-3693BBF6EE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01245E4-EF76-4415-B171-3693BBF6EE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E778977E-9510-417F-96B1-643DF1544B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E778977E-9510-417F-96B1-643DF1544B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E778977E-9510-417F-96B1-643DF1544B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E778977E-9510-417F-96B1-643DF1544B98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
