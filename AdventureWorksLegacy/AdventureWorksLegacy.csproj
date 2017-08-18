@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DefaultMvp.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +51,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultMvp.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DefaultMvp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultMvp.aspx.designer.cs">
+      <DependentUpon>DefaultMvp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +69,10 @@
     <ProjectReference Include="..\AdventureWorksModel\AdventureWorksModel.csproj">
       <Project>{8FF80CC6-8076-444B-AF85-20AFEB88B6DC}</Project>
       <Name>AdventureWorksModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdventureWorksPresenters\AdventureWorksPresenters.csproj">
+      <Project>{B36E6543-6CA0-45F3-9752-9233430BFAE5}</Project>
+      <Name>AdventureWorksPresenters</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

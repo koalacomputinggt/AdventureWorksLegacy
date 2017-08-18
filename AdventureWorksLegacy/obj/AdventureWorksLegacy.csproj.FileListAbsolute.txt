@@ -9,3 +9,5 @@ C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\Adventu
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.dll
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksPresenters.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksLegacy\bin\AdventureWorksPresenters.pdb

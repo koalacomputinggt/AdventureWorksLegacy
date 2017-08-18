@@ -25,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksBLL", "Advent
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksPresenters", "AdventureWorksPresenters\AdventureWorksPresenters.csproj", "{B36E6543-6CA0-45F3-9752-9233430BFAE5}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +53,10 @@ Global
 		{E778977E-9510-417F-96B1-643DF1544B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E778977E-9510-417F-96B1-643DF1544B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E778977E-9510-417F-96B1-643DF1544B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36E6543-6CA0-45F3-9752-9233430BFAE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36E6543-6CA0-45F3-9752-9233430BFAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36E6543-6CA0-45F3-9752-9233430BFAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36E6543-6CA0-45F3-9752-9233430BFAE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
