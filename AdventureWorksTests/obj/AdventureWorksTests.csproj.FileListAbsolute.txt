@@ -1,0 +1,14 @@
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksTests.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksTests.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksModel.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksPresenters.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\nunit.framework.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksDAL.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksBLL.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksDAL.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksBLL.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksModel.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\bin\Debug\AdventureWorksPresenters.pdb
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\obj\Debug\AdventureWorksTests.dll
+C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksTests\obj\Debug\AdventureWorksTests.pdb

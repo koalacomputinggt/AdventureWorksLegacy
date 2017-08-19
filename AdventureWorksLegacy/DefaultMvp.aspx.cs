@@ -88,8 +88,6 @@ namespace AdventureWorksLegacy
             int categoryId = Convert.ToInt32(DdlCategories.SelectedValue);
 
             presenter.SelectCategory(categoryId, Page.IsValid, Convert.ToBoolean(Application["CacheEnabled"].ToString()));
-
-            //this.SubcategoriesList = (List<Subcategory>)this.CategoriesList.Find(delegate(Category cat) { return cat.ProductCategoryId.Equals(categoryId); }).Subcategories;
         }
 
         protected void DdlSubcategories_SelectedIndexChanged(object sender, EventArgs e)

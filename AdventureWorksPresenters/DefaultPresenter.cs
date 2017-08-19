@@ -47,15 +47,6 @@ namespace AdventureWorksPresenters
                     subcategoriesList = catalogBll.GetSubcategories(categoryId);
 
                     view.SubcategoriesList = subcategoriesList;
-
-                    for (int i = 0; i <= this.categoriesList.Count - 1; i++)
-                    {
-                        if (this.categoriesList[i].ProductCategoryId == categoryId)
-                        {
-                            view.CategoriesList[i].Subcategories = subcategoriesList;
-                            break;
-                        }
-                    }
                 }
                 return;
             }
