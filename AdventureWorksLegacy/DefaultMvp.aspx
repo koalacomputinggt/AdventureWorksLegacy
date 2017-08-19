@@ -9,9 +9,13 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged">
+        <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>
-    
+        <br />
+        <br />
+        <asp:DropDownList ID="DdlSubcategories" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlSubcategories_SelectedIndexChanged">
+        </asp:DropDownList>
+        
     </div>
     </form>
 </body>

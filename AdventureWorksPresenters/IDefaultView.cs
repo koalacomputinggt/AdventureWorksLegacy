@@ -8,7 +8,8 @@ namespace AdventureWorksPresenters
 {
     public interface IDefaultView
     {
-        List<Category> CategoriesList { set; }
+        List<Category> CategoriesList { set; get; }
+        List<Subcategory> SubcategoriesList { set; }
         void AttachPresenter(DefaultPresenter presenter);
     }
 }

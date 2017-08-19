@@ -13,6 +13,7 @@ namespace AdventureWorksPresenters
 		    if (view == null) throw new ArgumentNullException("view may not be null");
 
 		    this.view = view;
+            this.categoriesList = view.CategoriesList;
         }
 
 	    public void InitView(bool isPostBack) {
@@ -28,15 +29,39 @@ namespace AdventureWorksPresenters
 		    }
 	    }
 
-        public void SelectCategory(string categoryId, bool isPageValid)
+        public void SelectCategory(int categoryId, bool isPageValid, bool cacheEnabled)
         {
             if (isPageValid)
             {
                 // Set subcategories
+                if (cacheEnabled)
+                {
+                    return;
+                }
+                else
+                {
+                    AdventureWorksBLL.Catalog catalogBll = new Catalog();
+
+                    List<Subcategory> subcategoriesList = new List<Subcategory>();
+
+                    subcategoriesList = catalogBll.GetSubcategories(categoryId);
+
+                    view.SubcategoriesList = subcategoriesList;
+
+                    for (int i = 0; i <= this.categoriesList.Count - 1; i++)
+                    {
+                        if (this.categoriesList[i].ProductCategoryId == categoryId)
+                        {
+                            view.CategoriesList[i].Subcategories = subcategoriesList;
+                            break;
+                        }
+                    }
+                }
                 return;
             }
         }
 
 	    private IDefaultView view;
+        private List<Category> categoriesList;
     }
 }

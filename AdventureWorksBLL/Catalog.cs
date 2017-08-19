@@ -15,5 +15,12 @@ namespace AdventureWorksBLL
 
             return catalogDal.GetCategories();
         }
+
+        public List<Subcategory> GetSubcategories(int categoryId)
+        {
+            AdventureWorksDAL.Catalog catalogDal = new AdventureWorksDAL.Catalog();
+
+            return catalogDal.GetSubcategories(categoryId);
+        }
     }
 }

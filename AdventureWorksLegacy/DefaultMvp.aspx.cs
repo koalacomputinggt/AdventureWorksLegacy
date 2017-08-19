@@ -46,7 +46,36 @@ namespace AdventureWorksLegacy
                 DdlCategories.DataTextField = "Name";
                 DdlCategories.DataBind();
             }
+            get 
+            {
+                if (DdlCategories.Items.Count > 0)
+                {
+                    List<Category> categoriesList = new List<Category>();
+                    foreach (ListItem item in DdlCategories.Items)
+                    {
+                        Category cat = new Category();
+                        cat.ProductCategoryId = Convert.ToInt32(item.Value);
+                        cat.Name = item.Text;
+                        categoriesList.Add(cat);
+                    }
+                    return categoriesList;
+                }
+                else return null;
+            }
         }
+
+        public List<Subcategory> SubcategoriesList
+        {
+            set
+            {
+                DdlSubcategories.Items.Clear();
+                DdlSubcategories.DataSource = value;
+                DdlSubcategories.DataValueField = "ProductSubcategoryId";
+                DdlSubcategories.DataTextField = "Name";
+                DdlSubcategories.DataBind();
+            }
+        }
+        
 
         private DefaultPresenter presenter;
 
@@ -54,7 +83,19 @@ namespace AdventureWorksLegacy
         {
             if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
 
-            presenter.SelectCategory(DdlCategories.SelectedValue, Page.IsValid);
+            this.Validate();
+
+            int categoryId = Convert.ToInt32(DdlCategories.SelectedValue);
+
+            presenter.SelectCategory(categoryId, Page.IsValid, Convert.ToBoolean(Application["CacheEnabled"].ToString()));
+
+            //this.SubcategoriesList = (List<Subcategory>)this.CategoriesList.Find(delegate(Category cat) { return cat.ProductCategoryId.Equals(categoryId); }).Subcategories;
+        }
+
+        protected void DdlSubcategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TODO
+            // Drill down products
         }
 
         //protected void BtnSubmit_OnClick(object sender, EventArgs e)
