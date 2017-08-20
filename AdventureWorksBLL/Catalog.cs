@@ -4,6 +4,7 @@ using System.Text;
 
 using AdventureWorksModel;
 using AdventureWorksDAL;
+using AdventureWorksCaching;
 
 namespace AdventureWorksBLL
 {
@@ -12,6 +13,8 @@ namespace AdventureWorksBLL
         public List<Category> GetCategories()
         {
             AdventureWorksDAL.Catalog catalogDal = new AdventureWorksDAL.Catalog();
+
+            object cacheObj = Cache.Instance.Read("saludo");
 
             return catalogDal.GetCategories();
         }

@@ -37,6 +37,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorksCaching\AdventureWorksCaching.csproj">
+      <Project>{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}</Project>
+      <Name>AdventureWorksCaching</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdventureWorksDAL\AdventureWorksDAL.csproj">
       <Project>{300AAF0F-388E-4EF6-A4FD-93C3C0DDD0B8}</Project>
       <Name>AdventureWorksDAL</Name>

@@ -13,12 +13,16 @@ using System.Web.UI.HtmlControls;
 using AdventureWorksPresenters;
 using AdventureWorksModel;
 
+using Memcached.ClientLibrary;
+
 namespace AdventureWorksLegacy
 {
     public partial class DefaultMvp : System.Web.UI.Page, IDefaultView
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TestCache();
+
             InitDefaultView();
         }
 
@@ -102,5 +106,36 @@ namespace AdventureWorksLegacy
 
         //    presenter.SubmitForm(Page.IsValid);
         //}
+
+        private void TestCache()
+        {
+            string cacheHostPort = ConfigurationManager.AppSettings["CacheHostPort"].ToString();
+
+            string[] serverlist = { cacheHostPort };
+
+            SockIOPool pool = SockIOPool.GetInstance();
+            pool.SetServers(serverlist);
+
+            pool.InitConnections = 3;
+            pool.MinConnections = 3;
+            pool.MaxConnections = 5;
+
+            pool.SocketConnectTimeout = 1000;
+            pool.SocketTimeout = 3000;
+
+            pool.MaintenanceSleep = 30;
+            pool.Failover = true;
+
+            pool.Nagle = false;
+            pool.Initialize();
+
+            //Read cache
+            MemcachedClient mc = new MemcachedClient();
+            mc.EnableCompression = false;
+
+            object returnObj = mc.Get("saludo");
+
+            SockIOPool.GetInstance().Shutdown();
+        }
     }
 }

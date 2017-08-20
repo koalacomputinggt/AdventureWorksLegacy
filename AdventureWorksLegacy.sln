@@ -37,6 +37,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksTests", "Adve
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksCaching", "AdventureWorksCaching\AdventureWorksCaching.csproj", "{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +73,10 @@ Global
 		{6B0BF5C9-383E-48A6-BBA2-D833C6309030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B0BF5C9-383E-48A6-BBA2-D833C6309030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B0BF5C9-383E-48A6-BBA2-D833C6309030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C2BF4F-BE97-494F-B2DC-D2FC4610A980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
