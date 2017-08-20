@@ -24,7 +24,7 @@ namespace AdventureWorksLegacy
 
                 List<Category> categoriesList = new List<Category>();
 
-                categoriesList = catalogBll.GetCategories();
+                categoriesList = catalogBll.GetCategories(false);
 
                 DdlCategories.Items.Clear();
                 DdlCategories.DataSource = categoriesList;

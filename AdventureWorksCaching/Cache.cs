@@ -12,9 +12,8 @@ namespace AdventureWorksCaching
     /// </summary>
     public sealed class Cache
     {
-        static readonly Cache instance = new Cache(); //  Locks var until assignment is complete for double safety
+        static volatile Cache instance; //  Locks var until assignment is complete for double safety
         private static object syncRoot = new Object();
-        private static string cacheHostPort;
         private static SockIOPool pool = SockIOPool.GetInstance();
         //private static double settingCacheExpirationTimeInMinutes;
         private Cache() { }
@@ -43,9 +42,36 @@ namespace AdventureWorksCaching
 
         private static void InitializeInstance()
         {
+            string cacheHostPort = ConfigurationManager.AppSettings["CacheHostPort"].ToString();
+            if (cacheHostPort == null)
+                throw new Exception("Please enter a host and port combination for the cache in app.config, under 'CacheHostPort' using the format ###.###.###.###:######");
 
-            //instance = new Cache();
+            //TODO
+            //if (!Double.TryParse(appSettings["CacheExpirationTimeInMinutes"], out settingCacheExpirationTimeInMinutes))
+            //    throw new Exception("Please enter how many minutes the cache should be kept in app.config, under 'CacheExpirationTimeInMinutes'");
 
+            instance = new Cache();
+
+            if (!pool.Initialized)
+            {
+                string[] serverList = { cacheHostPort };
+
+                //SockIOPool pool = SockIOPool.GetInstance();
+                pool.SetServers(serverList);
+
+                pool.InitConnections = 3;
+                pool.MinConnections = 3;
+                pool.MaxConnections = 5;
+
+                pool.SocketConnectTimeout = 1000;
+                pool.SocketTimeout = 3517;
+
+                pool.MaintenanceSleep = 30;
+                pool.Failover = true;
+
+                pool.Nagle = false;
+                pool.Initialize();
+            }
         }
 
         /// <summary>
@@ -70,34 +96,6 @@ namespace AdventureWorksCaching
         /// <returns>Value stored in cache</returns>
         public object Read(string Key)
         {
-            cacheHostPort = ConfigurationManager.AppSettings["CacheHostPort"].ToString();
-            if (cacheHostPort == null)
-                throw new Exception("Please enter a host and port combination for the cache in app.config, under 'CacheHostPort' using the format ###.###.###.###:######");
-
-            //TODO
-            //if (!Double.TryParse(appSettings["CacheExpirationTimeInMinutes"], out settingCacheExpirationTimeInMinutes))
-            //    throw new Exception("Please enter how many minutes the cache should be kept in app.config, under 'CacheExpirationTimeInMinutes'");
-
-            string[] serverList = { cacheHostPort };
-
-            //SockIOPool pool = SockIOPool.GetInstance();
-            pool.SetServers(serverList);
-
-            pool.InitConnections = 3;
-            pool.MinConnections = 3;
-            pool.MaxConnections = 5;
-
-            pool.SocketConnectTimeout = 1000;
-            pool.SocketTimeout = 3517;
-
-            pool.MaintenanceSleep = 30;
-            pool.Failover = true;
-
-            pool.Nagle = false;
-            pool.Initialize();
-
-            int timeout = pool.SocketTimeout;
-
             MemcachedClient mc = new MemcachedClient();
             mc.EnableCompression = false;
 

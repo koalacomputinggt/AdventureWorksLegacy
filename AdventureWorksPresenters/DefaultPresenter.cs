@@ -23,32 +23,23 @@ namespace AdventureWorksPresenters
 
                 List<Category> categoriesList = new List<Category>();
 
-                categoriesList = catalogBll.GetCategories();
+                categoriesList = catalogBll.GetCategories(view.CacheEnabled);
 
                 view.CategoriesList = categoriesList;
 		    }
 	    }
 
-        public void SelectCategory(int categoryId, bool isPageValid, bool cacheEnabled)
+        public void SelectCategory(int categoryId, bool isPageValid)
         {
             if (isPageValid)
             {
-                // Set subcategories
-                if (cacheEnabled)
-                {
-                    return;
-                }
-                else
-                {
-                    AdventureWorksBLL.Catalog catalogBll = new Catalog();
+                AdventureWorksBLL.Catalog catalogBll = new Catalog();
 
-                    List<Subcategory> subcategoriesList = new List<Subcategory>();
+                List<Subcategory> subcategoriesList = new List<Subcategory>();
 
-                    subcategoriesList = catalogBll.GetSubcategories(categoryId);
+                subcategoriesList = catalogBll.GetSubcategories(categoryId, view.CacheEnabled);
 
-                    view.SubcategoriesList = subcategoriesList;
-                }
-                return;
+                view.SubcategoriesList = subcategoriesList;
             }
         }
 

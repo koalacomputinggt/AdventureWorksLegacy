@@ -10,6 +10,7 @@ namespace AdventureWorksPresenters
     {
         List<Category> CategoriesList { set; get; }
         List<Subcategory> SubcategoriesList { set; }
+        bool CacheEnabled { set; get; }
         void AttachPresenter(DefaultPresenter presenter);
     }
 }

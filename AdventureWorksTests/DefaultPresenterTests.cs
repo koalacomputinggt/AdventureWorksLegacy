@@ -55,6 +55,12 @@ public class DefaultPresenterTests
             }
         }
 
+        public bool CacheEnabled
+        {
+            set { }
+            get { return false; }
+        }
+
         public void AttachPresenter(DefaultPresenter presenter) { }
 
         private List<Category> categoriesList = new List<Category>();

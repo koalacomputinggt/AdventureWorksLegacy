@@ -10,16 +10,19 @@ namespace AdventureWorksBLL
 {
     public class Catalog
     {
-        public List<Category> GetCategories()
+        public List<Category> GetCategories(bool isCacheEnabled)
         {
             AdventureWorksDAL.Catalog catalogDal = new AdventureWorksDAL.Catalog();
 
-            object cacheObj = Cache.Instance.Read("saludo");
+            if (isCacheEnabled)
+            {
+                object cacheObj = Cache.Instance.Read("saludo");
+            }
 
             return catalogDal.GetCategories();
         }
 
-        public List<Subcategory> GetSubcategories(int categoryId)
+        public List<Subcategory> GetSubcategories(int categoryId, bool isCacheEnabled)
         {
             AdventureWorksDAL.Catalog catalogDal = new AdventureWorksDAL.Catalog();
 

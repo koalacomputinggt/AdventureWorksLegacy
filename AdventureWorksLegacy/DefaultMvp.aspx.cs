@@ -28,6 +28,7 @@ namespace AdventureWorksLegacy
 
         private void InitDefaultView()
         {
+            this.cacheEnabled = Convert.ToBoolean(Application["CacheEnabled"].ToString());
             DefaultPresenter presenter = new DefaultPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
@@ -79,8 +80,20 @@ namespace AdventureWorksLegacy
                 DdlSubcategories.DataBind();
             }
         }
-        
 
+        public bool CacheEnabled
+        {
+            set
+            {
+                cacheEnabled = value;
+            }
+            get
+            {
+                return cacheEnabled;
+            }
+        }
+
+        private bool cacheEnabled;
         private DefaultPresenter presenter;
 
         protected void DdlCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,7 +104,7 @@ namespace AdventureWorksLegacy
 
             int categoryId = Convert.ToInt32(DdlCategories.SelectedValue);
 
-            presenter.SelectCategory(categoryId, Page.IsValid, Convert.ToBoolean(Application["CacheEnabled"].ToString()));
+            presenter.SelectCategory(categoryId, Page.IsValid);
         }
 
         protected void DdlSubcategories_SelectedIndexChanged(object sender, EventArgs e)
