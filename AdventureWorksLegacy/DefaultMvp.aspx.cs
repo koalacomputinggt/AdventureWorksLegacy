@@ -146,7 +146,7 @@ namespace AdventureWorksLegacy
             MemcachedClient mc = new MemcachedClient();
             mc.EnableCompression = false;
 
-            object returnObj = mc.Get("saludo");
+            object returnObj = mc.Get("best_dev");
 
             SockIOPool.GetInstance().Shutdown();
         }

@@ -16,7 +16,9 @@ namespace AdventureWorksBLL
 
             if (isCacheEnabled)
             {
-                object cacheObj = Cache.Instance.Read("saludo");
+                //object cacheObj = Cache.Instance.Read("saludo");
+                Memcached cache = new Memcached();
+                object obj = cache.Read("best_dev");
             }
 
             return catalogDal.GetCategories();
