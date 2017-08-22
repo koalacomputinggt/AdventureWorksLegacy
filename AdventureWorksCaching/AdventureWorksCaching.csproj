@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeITMemcached\HashAlgorithms.cs" />
+    <Compile Include="BeITMemcached\LogAdapter.cs" />
+    <Compile Include="BeITMemcached\MemcachedClient.cs" />
+    <Compile Include="BeITMemcached\MemcachedClientException.cs" />
+    <Compile Include="BeITMemcached\PooledSocket.cs" />
+    <Compile Include="BeITMemcached\Serializer.cs" />
+    <Compile Include="BeITMemcached\ServerPool.cs" />
+    <Compile Include="BeITMemcached\SocketPool.cs" />
     <Compile Include="Cache.cs" />
     <Compile Include="Memcached.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

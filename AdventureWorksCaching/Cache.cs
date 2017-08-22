@@ -1,77 +1,77 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Text;
 
-using Memcached.ClientLibrary;
+using BeIT.MemCached;
 
 namespace AdventureWorksCaching
 {
-    /// <summary>
-    /// Thread Safe Singleton Cache Class
-    /// </summary>
-    public sealed class Cache
+    public class Cache
     {
-        static volatile Cache instance; //  Locks var until assignment is complete for double safety
-        private static object syncRoot = new Object();
-        private static SockIOPool pool = SockIOPool.GetInstance();
-        //private static double settingCacheExpirationTimeInMinutes;
-        private Cache() { }
-
-        /// <summary>
-        /// Singleton Cache Instance
-        /// </summary>
-        public static Cache Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    lock (syncRoot)
-                    {
-                        if (instance == null)
-                        {
-                            InitializeInstance();
-
-                        }
-                    }
-                }
-                return instance;
-            }
-        }
-
-        private static void InitializeInstance()
+        public Cache()
         {
             string cacheHostPort = ConfigurationManager.AppSettings["CacheHostPort"].ToString();
-            if (cacheHostPort == null)
-                throw new Exception("Please enter a host and port combination for the cache in app.config, under 'CacheHostPort' using the format ###.###.###.###:######");
 
-            //TODO
-            //if (!Double.TryParse(appSettings["CacheExpirationTimeInMinutes"], out settingCacheExpirationTimeInMinutes))
-            //    throw new Exception("Please enter how many minutes the cache should be kept in app.config, under 'CacheExpirationTimeInMinutes'");
+            MemcachedClient.Setup("MyCache", new string[] { cacheHostPort });
 
-            instance = new Cache();
+            //Get the instance we just set up so we can use it. You can either store this reference yourself in
+            //some field, or fetch it every time you need it, it doesn't really matter.
+            MemcachedClient cache = MemcachedClient.GetInstance("MyCache");
 
-            if (!pool.Initialized)
-            {
-                string[] serverList = { cacheHostPort };
+            ////Change client settings to values other than the default like this:
+            cache.SendReceiveTimeout = 5000;
+            cache.ConnectTimeout = 5000;
+            cache.MinPoolSize = 1;
+            cache.MaxPoolSize = 5;
 
-                //SockIOPool pool = SockIOPool.GetInstance();
-                pool.SetServers(serverList);
 
-                pool.InitConnections = 3;
-                pool.MinConnections = 3;
-                pool.MaxConnections = 5;
+            object result = cache.Get("demo");
+            string result1 = System.Text.Encoding.UTF8.GetString((byte[])result);
+            //if (result[0] != null && result[0] is int)
 
-                pool.SocketConnectTimeout = 1000;
-                pool.SocketTimeout = 3517;
+            //----------------
+            // Using a client.
+            //----------------
 
-                pool.MaintenanceSleep = 30;
-                pool.Failover = true;
+            //Set some items
+            //Console.Out.WriteLine("Storing some items.");
+            //cache.Set("mystring", "The quick brown fox jumped over the lazy dog.");
+            //cache.Set("myarray", new string[] { "This is the first string.", "This is the second string." });
+            //cache.Set("myinteger", 4711);
+            //cache.Set("mydate", new DateTime(2008, 02, 23));
+            ////Use custom hash
+            //cache.Set("secondstring", "Flygande bäckasiner söka hwila på mjuka tufvor", 4711);
 
-                pool.Nagle = false;
-                pool.Initialize();
-            }
+            //Get a string
+            //string str = cache.Get("mystring") as string;
+            //if (str != null)
+            //{
+            //    Console.Out.WriteLine("Fetched item with key: mystring, value: " + str);
+            //}
+
+            ////Get an object
+            //string[] array = cache.Get("myarray") as string[];
+            //if (array != null)
+            //{
+            //    Console.Out.WriteLine("Fetched items with key: myarray, value 1: " + array[0] + ", value 2: " + array[1]);
+            //}
+
+            ////Get several values at once
+            //object[] result = cache.Get(new string[] { "myinteger", "mydate" });
+            //if (result[0] != null && result[0] is int)
+            //{
+            //    Console.Out.WriteLine("Fetched item with key: myinteger, value: " + (int)result[0]);
+            //}
+            //if (result[1] != null && result[1] is DateTime)
+            //{
+            //    Console.Out.WriteLine("Fetched item with key: mydate, value: " + (DateTime)result[1]);
+            //}
+
+            //str = cache.Get("secondstring", 4711) as string;
+            //if (str != null)
+            //{
+            //    Console.Out.WriteLine("Fetched item with key and custom hash: secondstring, value: " + str);
+            //}
         }
 
         /// <summary>
@@ -81,12 +81,7 @@ namespace AdventureWorksCaching
         /// <param name="Value">Value to be stored in Cache associated with Key</param>
         public void Write(string Key, object Value)
         {
-            MemcachedClient mc = new MemcachedClient();
-            mc.EnableCompression = false;
-
-            mc.Set(Key, Value);
-
-            SockIOPool.GetInstance().Shutdown();
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -96,14 +91,7 @@ namespace AdventureWorksCaching
         /// <returns>Value stored in cache</returns>
         public object Read(string Key)
         {
-            MemcachedClient mc = new MemcachedClient();
-            mc.EnableCompression = false;
-
-            object returnObj = mc.Get(Key);
-
-            SockIOPool.GetInstance().Shutdown();
-
-            return returnObj;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -113,23 +101,8 @@ namespace AdventureWorksCaching
         /// <returns>Value stored in cache</returns>
         public object TryRead(string Key)
         {
-            try
-            {
-                MemcachedClient mc = new MemcachedClient();
-                mc.EnableCompression = false;
-
-                object returnObj = mc.Get(Key);
-
-                SockIOPool.GetInstance().Shutdown();
-
-                return returnObj;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            throw new NotImplementedException();
 
         }
-
     }
 }
