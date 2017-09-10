@@ -15,3 +15,19 @@ C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\Adventu
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\Memcached.ClientLibrary.dll
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksCaching.pdb
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\Memcached.ClientLibrary.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksPresenters.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksPresenters.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksBLL.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksModel.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\log4net.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksDAL.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksCaching.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\Memcached.ClientLibrary.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksDAL.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksCaching.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksBLL.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\bin\Debug\AdventureWorksModel.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\obj\Debug\AdventureWorksPresenters.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksPresenters\obj\Debug\AdventureWorksPresenters.pdb

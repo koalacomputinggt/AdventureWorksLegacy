@@ -7,3 +7,8 @@ C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\Adventu
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksCaching\bin\Debug\Memcached.ClientLibrary.pdb
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksCaching\obj\Debug\AdventureWorksCaching.dll
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksCaching\obj\Debug\AdventureWorksCaching.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksCaching\bin\Debug\AdventureWorksCaching.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksCaching\bin\Debug\AdventureWorksCaching.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksCaching\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksCaching\obj\Debug\AdventureWorksCaching.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksCaching\obj\Debug\AdventureWorksCaching.pdb

@@ -55,6 +55,19 @@ public class DefaultPresenterTests
             }
         }
 
+        public List<Product> ProductsList
+        {
+            set
+            {
+                productsList = value;
+            }
+
+            get
+            {
+                return productsList;
+            }
+        }
+
         public bool CacheEnabled
         {
             set { }
@@ -65,5 +78,6 @@ public class DefaultPresenterTests
 
         private List<Category> categoriesList = new List<Category>();
         private List<Subcategory> subcategoriesList = new List<Subcategory>();
+        private List<Product> productsList = new List<Product>();
     }
 }

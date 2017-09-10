@@ -21,7 +21,7 @@ namespace AdventureWorksLegacy
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TestCache();
+            //TestCache();
 
             InitDefaultView();
         }
@@ -81,6 +81,18 @@ namespace AdventureWorksLegacy
             }
         }
 
+        public List<Product> ProductsList
+        {
+            set
+            {
+                DdlSubcategories.Items.Clear();
+                DdlSubcategories.DataSource = value;
+                DdlSubcategories.DataValueField = "ProductSubcategoryId";
+                DdlSubcategories.DataTextField = "Name";
+                DdlSubcategories.DataBind();
+            }
+        }
+
         public bool CacheEnabled
         {
             set
@@ -109,8 +121,13 @@ namespace AdventureWorksLegacy
 
         protected void DdlSubcategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO
-            // Drill down products
+            if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
+
+            this.Validate();
+
+            int subcategoryId = Convert.ToInt32(DdlSubcategories.SelectedValue);
+
+            presenter.SelectSubcategory(subcategoryId, Page.IsValid);
         }
 
         //protected void BtnSubmit_OnClick(object sender, EventArgs e)

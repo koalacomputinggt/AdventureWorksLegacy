@@ -43,6 +43,20 @@ namespace AdventureWorksPresenters
             }
         }
 
+        public void SelectSubcategory(int subcategoryId, bool isPageValid)
+        {
+            if (isPageValid)
+            {
+                AdventureWorksBLL.OnlineStore storeBll = new OnlineStore();
+
+                List<Product> productsList = new List<Product>();
+
+                productsList = storeBll.GetProducts(subcategoryId, view.CacheEnabled);
+
+                view.ProductsList = productsList;
+            }
+        }
+
 	    private IDefaultView view;
         private List<Category> categoriesList;
     }

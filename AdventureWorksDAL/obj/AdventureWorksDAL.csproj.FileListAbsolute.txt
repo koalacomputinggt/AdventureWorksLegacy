@@ -5,3 +5,10 @@ C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\Adventu
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksDAL\bin\Debug\AdventureWorksModel.pdb
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksDAL\obj\Debug\AdventureWorksDAL.dll
 C:\Users\Lino\Documents\Visual Studio 2005\Projects\AdventureWorksLegacy\AdventureWorksDAL\obj\Debug\AdventureWorksDAL.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\bin\Debug\AdventureWorksDAL.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\bin\Debug\AdventureWorksDAL.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\bin\Debug\AdventureWorksModel.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\bin\Debug\AdventureWorksModel.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\obj\Debug\AdventureWorksDAL.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksDAL\obj\Debug\AdventureWorksDAL.pdb
