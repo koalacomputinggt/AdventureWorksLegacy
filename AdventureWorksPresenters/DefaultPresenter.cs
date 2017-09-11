@@ -43,7 +43,7 @@ namespace AdventureWorksPresenters
             }
         }
 
-        public void SelectSubcategory(int subcategoryId, bool isPageValid)
+        public void SelectSubcategoryWithThumbnails(int subcategoryId, bool isPageValid, string appRootPhysicalPath)
         {
             if (isPageValid)
             {
@@ -51,7 +51,7 @@ namespace AdventureWorksPresenters
 
                 List<Product> productsList = new List<Product>();
 
-                productsList = storeBll.GetProducts(subcategoryId, view.CacheEnabled);
+                productsList = storeBll.GetProductsWithThumbnails(subcategoryId, view.CacheEnabled, appRootPhysicalPath);
 
                 view.ProductsList = productsList;
             }

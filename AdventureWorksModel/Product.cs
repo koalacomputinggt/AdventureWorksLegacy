@@ -15,8 +15,10 @@ namespace AdventureWorksModel
         private int productSubcategoryId;
         private byte[] thumbnailPhoto;
         private string thumbnailPhotoFileName;
+        private string thumbnailPhotoUrl;
         private byte[] largePhoto;
         private string largePhotoFileName;
+        private string largePhotoUrl;
 
         public int ProductId {
             get { return productId; }
@@ -60,6 +62,11 @@ namespace AdventureWorksModel
             get { return thumbnailPhotoFileName; }
             set { thumbnailPhotoFileName = value; }
         }
+        public string ThumbnailPhotoUrl
+        {
+            get { return thumbnailPhotoUrl; }
+            set { thumbnailPhotoUrl = value; }
+        }
         public byte[] LargePhoto
         {
             get { return largePhoto; }
@@ -69,6 +76,11 @@ namespace AdventureWorksModel
         {
             get { return largePhotoFileName; }
             set { largePhotoFileName = value; }
+        }
+        public string LargePhotoUrl
+        {
+            get { return largePhotoUrl; }
+            set { largePhotoUrl = value; }
         }
     }
 }

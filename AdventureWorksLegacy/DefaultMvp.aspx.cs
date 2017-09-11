@@ -85,11 +85,8 @@ namespace AdventureWorksLegacy
         {
             set
             {
-                DdlSubcategories.Items.Clear();
-                DdlSubcategories.DataSource = value;
-                DdlSubcategories.DataValueField = "ProductSubcategoryId";
-                DdlSubcategories.DataTextField = "Name";
-                DdlSubcategories.DataBind();
+                DlProducts.DataSource = value;
+                DlProducts.DataBind();
             }
         }
 
@@ -127,7 +124,7 @@ namespace AdventureWorksLegacy
 
             int subcategoryId = Convert.ToInt32(DdlSubcategories.SelectedValue);
 
-            presenter.SelectSubcategory(subcategoryId, Page.IsValid);
+            presenter.SelectSubcategoryWithThumbnails(subcategoryId, Page.IsValid, HttpContext.Current.Server.MapPath("~"));
         }
 
         //protected void BtnSubmit_OnClick(object sender, EventArgs e)

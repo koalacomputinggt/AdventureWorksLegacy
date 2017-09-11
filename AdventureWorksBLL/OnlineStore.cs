@@ -10,6 +10,13 @@ namespace AdventureWorksBLL
 {
     public class OnlineStore
     {
+        public List<AdventureWorksModel.Product> GetProductsWithThumbnails(int subcategoryId, bool isCacheEnabled, string appRootPhysicalPath)
+        {
+            AdventureWorksDAL.Product productDal = new AdventureWorksDAL.Product();
+
+            return productDal.GetProductsWithThumbnails(subcategoryId, appRootPhysicalPath);
+        }
+
         public List<AdventureWorksModel.Product> GetProducts(int subcategoryId, bool isCacheEnabled)
         {
             AdventureWorksDAL.Product productDal = new AdventureWorksDAL.Product();
