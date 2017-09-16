@@ -67,6 +67,7 @@ namespace AdventureWorksDAL
 
                     StringBuilder sb = new StringBuilder();
                     sb.Append(appRootPhysicalPath);
+                    sb.Append(@"\");
                     sb.Append(thumbnailsLocation);
                     sb.Append(@"\");
                     sb.Append((string)rdr["ThumbnailPhotoFileName"]);
