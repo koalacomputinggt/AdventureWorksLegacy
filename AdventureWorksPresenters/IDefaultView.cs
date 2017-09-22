@@ -8,8 +8,7 @@ namespace AdventureWorksPresenters
 {
     public interface IDefaultView
     {
-        List<Category> CategoriesList { set; get; }
-        List<Subcategory> SubcategoriesList { set;  }
+       
         List<Product> ProductsList { set;  }
         bool CacheEnabled { set; get; }
         void AttachPresenter(DefaultPresenter presenter);

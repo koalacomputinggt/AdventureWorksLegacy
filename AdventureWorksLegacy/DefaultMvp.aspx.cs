@@ -14,6 +14,8 @@ using AdventureWorksPresenters;
 using AdventureWorksModel;
 
 using Memcached.ClientLibrary;
+using System.Web.Services;
+
 
 namespace AdventureWorksLegacy
 {
@@ -32,61 +34,88 @@ namespace AdventureWorksLegacy
             DefaultPresenter presenter = new DefaultPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
+            presenter.SelectSubcategoryWithThumbnails(presenter.GetInitialSubCategory(CurrentCategoryIndex, CurrentSubCategoryIndex), true, HttpContext.Current.Server.MapPath("~"));
         }
 
-        public void AttachPresenter(DefaultPresenter presenter)
+        public void AttachPresenter(DefaultPresenter _presenter)
         {
-            if (presenter == null) throw new ArgumentNullException("presenter may not be null");
+            if (_presenter == null) throw new ArgumentNullException("presenter may not be null");
 
-            this.presenter = presenter;
+            presenter = _presenter;
         }
 
-        public List<Category> CategoriesList
+        public int CurrentCategoryIndex
         {
-            set 
+            get
             {
-                DdlCategories.Items.Clear();
-                DdlCategories.DataSource = value;
-                DdlCategories.DataValueField = "ProductCategoryId";
-                DdlCategories.DataTextField = "Name";
-                DdlCategories.DataBind();
-            }
-            get 
-            {
-                if (DdlCategories.Items.Count > 0)
-                {
-                    List<Category> categoriesList = new List<Category>();
-                    foreach (ListItem item in DdlCategories.Items)
-                    {
-                        Category cat = new Category();
-                        cat.ProductCategoryId = Convert.ToInt32(item.Value);
-                        cat.Name = item.Text;
-                        categoriesList.Add(cat);
-                    }
-                    return categoriesList;
-                }
-                else return null;
+                string category = Request.QueryString["categoryIndex"];
+                if (category == null) return 0;
+                return Convert.ToInt32(category);
             }
         }
 
-        public List<Subcategory> SubcategoriesList
+        public int CurrentSubCategoryIndex
         {
-            set
+            get
             {
-                DdlSubcategories.Items.Clear();
-                DdlSubcategories.DataSource = value;
-                DdlSubcategories.DataValueField = "ProductSubcategoryId";
-                DdlSubcategories.DataTextField = "Name";
-                DdlSubcategories.DataBind();
+                string subCategory = Request.QueryString["subCategoryIndex"];
+                if (subCategory == null) return 0;
+                return Convert.ToInt32(subCategory);
             }
         }
 
+        
+
+       
         public List<Product> ProductsList
         {
             set
             {
                 DlProducts.DataSource = value;
                 DlProducts.DataBind();
+            }
+        }
+
+        public string CategoryListTabData
+        {
+            get
+            {
+                string[] result = new string[]{"",""};
+                List<Category> categories = presenter.GetCategories();
+                if (categories.Count > 0)
+                {
+                    foreach (Category item in categories)
+                    {
+                        if (!result[0].Equals(""))
+                            result[0] += ",";
+                        if (!result[1].Equals(""))
+                            result[1] += ",";
+                        result[0] += item.Name;
+                        result[1] += item.ProductCategoryId;
+                    }
+                }
+                return result[0]+"|"+result[1];
+            }
+        }
+
+        public string SubCategoryListAccordionData
+        {
+            get
+            {
+                
+                string[] result = new string[] { "", "" };
+                List<Category> categories = presenter.GetCategories();
+                List<Subcategory> subCategoryList = presenter.GetSubCategories(categories[CurrentCategoryIndex].ProductCategoryId);
+                foreach (Subcategory item in subCategoryList)
+                {
+                    if (!result[0].Equals(""))
+                        result[0] += ",";
+                    if (!result[1].Equals(""))
+                        result[1] += ",";
+                    result[0] += item.Name;
+                    result[1] += item.ProductSubcategoryId;
+                }
+                return result[0] + "|" + result[1];
             }
         }
 
@@ -105,27 +134,6 @@ namespace AdventureWorksLegacy
         private bool cacheEnabled;
         private DefaultPresenter presenter;
 
-        protected void DdlCategories_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
-
-            this.Validate();
-
-            int categoryId = Convert.ToInt32(DdlCategories.SelectedValue);
-
-            presenter.SelectCategory(categoryId, Page.IsValid);
-        }
-
-        protected void DdlSubcategories_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
-
-            this.Validate();
-
-            int subcategoryId = Convert.ToInt32(DdlSubcategories.SelectedValue);
-
-            presenter.SelectSubcategoryWithThumbnails(subcategoryId, Page.IsValid, HttpContext.Current.Server.MapPath("~"));
-        }
 
         //protected void BtnSubmit_OnClick(object sender, EventArgs e)
         //{
@@ -164,5 +172,7 @@ namespace AdventureWorksLegacy
 
             SockIOPool.GetInstance().Shutdown();
         }
+
+        
     }
 }

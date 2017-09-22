@@ -13,7 +13,7 @@ namespace AdventureWorksPresenters
 		    if (view == null) throw new ArgumentNullException("view may not be null");
 
 		    this.view = view;
-            this.categoriesList = view.CategoriesList;
+          //  this.categoriesList = view.CategoriesList;
         }
 
 	    public void InitView(bool isPostBack) {
@@ -25,7 +25,7 @@ namespace AdventureWorksPresenters
 
                 categoriesList = catalogBll.GetCategories(view.CacheEnabled);
 
-                view.CategoriesList = categoriesList;
+             //   view.CategoriesList = categoriesList;
 		    }
 	    }
 
@@ -39,8 +39,22 @@ namespace AdventureWorksPresenters
 
                 subcategoriesList = catalogBll.GetSubcategories(categoryId, view.CacheEnabled);
 
-                view.SubcategoriesList = subcategoriesList;
+               // view.SubcategoriesList = subcategoriesList;
             }
+        }
+
+        public List<Subcategory> GetSubCategories(int categoryId)
+        {
+            AdventureWorksBLL.Catalog catalogBll = new Catalog();
+            List<Subcategory> subcategoriesList = new List<Subcategory>();
+            subcategoriesList = catalogBll.GetSubcategories(categoryId, view.CacheEnabled);
+            return subcategoriesList;
+        }
+
+        public List<Category> GetCategories()
+        {
+            AdventureWorksBLL.Catalog catalogBll = new Catalog();
+            return catalogBll.GetCategories(view.CacheEnabled);
         }
 
         public void SelectSubcategoryWithThumbnails(int subcategoryId, bool isPageValid, string appRootPhysicalPath)
@@ -55,6 +69,14 @@ namespace AdventureWorksPresenters
 
                 view.ProductsList = productsList;
             }
+        }
+
+        public int GetInitialSubCategory(int categoryIndex, int subCategoryIndex)
+        {
+            List<Category> category = GetCategories();
+            List<Subcategory> subCategory = GetSubCategories(category[categoryIndex].ProductCategoryId);
+            int subCategoryId = subCategory[subCategoryIndex].ProductSubcategoryId;
+            return subCategoryId;
         }
 
 	    private IDefaultView view;

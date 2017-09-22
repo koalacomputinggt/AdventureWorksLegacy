@@ -4,22 +4,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Default MVP</title>
+    <link href="static/css/flora.all.css" rel="stylesheet" type="text/css" />
+    <script src="static/js/jquery-1.2.4b.js" type="text/javascript"></script>
+    <script src="static/js/ui.core.js" type="text/javascript"></script>
+    <script src="static/js/ui.tabs.js" type="text/javascript"></script>
+    <script src="static/js/ui.accordion.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        var tabsDataRaw='<%=CategoryListTabData %>';
+        var currentCategoryIndex = '<%=CurrentCategoryIndex %>';
+        var currentSubCategoryIndex = '<%=CurrentSubCategoryIndex %>';
+        var subCategoriesData='<%=SubCategoryListAccordionData %>';
+    </script>
+    <script src="script/DefaultMvp.js" type="text/javascript"></script>
 </head>
 <body>
+    <script type="html" id="tab-content">
+        <div id="fragment-{{value}}" data-tab-id="{{value}}">
+            <h1>{{text}}</h1>
+            <ul id="accordion-{{value}}">		        
+	        </ul>
+        </div>
+    </script>
     <form id="form1" runat="server">
-        <div>
-            <asp:DropDownList ID="DdlCategories" runat="server" OnSelectedIndexChanged="DdlCategories_SelectedIndexChanged"
-                AutoPostBack="True"  AppendDataBoundItems = "True" >
-                <asp:ListItem Selected = "True" Text = "--Select--" Value = "0"></asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
-            <asp:DropDownList ID="DdlSubcategories" runat="server" OnSelectedIndexChanged="DdlSubcategories_SelectedIndexChanged" 
-                AutoPostBack="True" AppendDataBoundItems = "True" >
-                <asp:ListItem Selected = "True" Text = "--Select--" Value = "0"></asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
+    
+        <div id="container-1">
+                <ul class="tabssection">
+                    
+                </ul>
+                
+            </div>
+
+        <div id="all-content">
+          
             <div>
                 <asp:DataList ID="DlProducts" runat="server" RepeatColumns="4">
                     <ItemTemplate>
