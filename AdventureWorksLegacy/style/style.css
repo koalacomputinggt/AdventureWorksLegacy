@@ -1,0 +1,23 @@
+.km-thumbnail
+{
+	padding-top:30px;
+	cursor:pointer;
+	text-align:center;
+}
+
+.km-thumbnail:hover
+{
+	border:gray dashed 1px;
+}
+
+.km-thumbnail>div
+{
+	padding-left:30px;
+	padding-top: 10px;
+}
+
+.km-bike-name
+{
+	font-size:18px;
+	color:#08088A;
+}
