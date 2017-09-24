@@ -16,7 +16,6 @@ using AdventureWorksModel;
 using Memcached.ClientLibrary;
 using System.Web.Services;
 
-
 namespace AdventureWorksLegacy
 {
     public partial class DefaultMvp : System.Web.UI.Page, IDefaultView
@@ -131,8 +130,37 @@ namespace AdventureWorksLegacy
             }
         }
 
+        public bool IsUserAuthenticated
+        {
+            set
+            {
+                isUserAuthenticated = value;
+            }
+            get
+            {
+                return isUserAuthenticated;
+            }
+        }
+
         private bool cacheEnabled;
         private DefaultPresenter presenter;
+        private bool isUserAuthenticated;
+
+
+
+        protected void BtnSignIn_Click(object sender, EventArgs e)
+        {
+            if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
+
+            AdventureWorksModel.User userInfo = new User();
+
+            userInfo = presenter.AuthenticateUser(TxtEmail.Text.Trim(), TxtPwd.Text.Trim(), true);
+
+            if (userInfo != null)
+            {
+
+            }
+        }
 
 
         //protected void BtnSubmit_OnClick(object sender, EventArgs e)
@@ -172,6 +200,8 @@ namespace AdventureWorksLegacy
 
             SockIOPool.GetInstance().Shutdown();
         }
+
+
 
         
     }

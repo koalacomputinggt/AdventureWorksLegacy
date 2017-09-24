@@ -35,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalog.cs" />
+    <Compile Include="Membership.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -79,5 +79,11 @@ public class DefaultPresenterTests
         private List<Category> categoriesList = new List<Category>();
         private List<Subcategory> subcategoriesList = new List<Subcategory>();
         private List<Product> productsList = new List<Product>();
+
+        public bool IsUserAuthenticated
+        {
+            set { }
+            get { return false; }
+        }
     }
 }

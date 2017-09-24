@@ -12,5 +12,6 @@ namespace AdventureWorksPresenters
         List<Product> ProductsList { set;  }
         bool CacheEnabled { set; get; }
         void AttachPresenter(DefaultPresenter presenter);
+        bool IsUserAuthenticated { set; get; }
     }
 }
