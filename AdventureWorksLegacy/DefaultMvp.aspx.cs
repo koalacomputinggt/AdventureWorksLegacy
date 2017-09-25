@@ -30,6 +30,7 @@ namespace AdventureWorksLegacy
         private void InitDefaultView()
         {
             this.cacheEnabled = Convert.ToBoolean(Application["CacheEnabled"].ToString());
+            this.isUserAuthenticated = false;
             DefaultPresenter presenter = new DefaultPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
@@ -135,6 +136,17 @@ namespace AdventureWorksLegacy
             set
             {
                 isUserAuthenticated = value;
+                if (isUserAuthenticated)
+                {
+                    divAnonymous.Visible = false;
+                    divLogged.Visible = true;
+                    LblLoggedUser.Text = string.Format("Welcome {0} {1}!", this.UserInfo.FirstName, this.userInfo.LastName);
+                }
+                else
+                {
+                    divAnonymous.Visible = true;
+                    divLogged.Visible = false;
+                }
             }
             get
             {
@@ -145,6 +157,7 @@ namespace AdventureWorksLegacy
         private bool cacheEnabled;
         private DefaultPresenter presenter;
         private bool isUserAuthenticated;
+        private User userInfo;
 
 
 
@@ -154,21 +167,26 @@ namespace AdventureWorksLegacy
 
             AdventureWorksModel.User userInfo = new User();
 
-            userInfo = presenter.AuthenticateUser(TxtEmail.Text.Trim(), TxtPwd.Text.Trim(), true);
+            presenter.AuthenticateUser(TxtEmail.Text.Trim(), TxtPwd.Text.Trim(), true);
 
-            if (userInfo != null)
-            {
+            //TODO
+            //if (this.LoginMessage != string.Empty)
+            //{
 
-            }
+            //}
         }
 
-
-        //protected void BtnSubmit_OnClick(object sender, EventArgs e)
-        //{
-        //    if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
-
-        //    presenter.SubmitForm(Page.IsValid);
-        //}
+        public User UserInfo
+        {
+            set
+            {
+                userInfo = value;
+            }
+            get
+            {
+                return userInfo;
+            }
+        }
 
         private void TestCache()
         {
@@ -199,6 +217,11 @@ namespace AdventureWorksLegacy
             object returnObj = mc.Get("best_dev");
 
             SockIOPool.GetInstance().Shutdown();
+        }
+
+        protected void BtnSignOut_Click(object sender, EventArgs e)
+        {
+
         }
 
 

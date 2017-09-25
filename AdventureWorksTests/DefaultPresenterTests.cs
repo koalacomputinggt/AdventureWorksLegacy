@@ -85,5 +85,11 @@ public class DefaultPresenterTests
             set { }
             get { return false; }
         }
+
+        public User UserInfo
+        {
+            set { }
+            get { return null; }
+        }
     }
 }

@@ -32,3 +32,6 @@ C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\bin\Adventu
 C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.dll
 C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\obj\Debug\AdventureWorksLegacy.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\bin\BCrypt.dll
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\bin\BCrypt.pdb
+C:\Users\Lino Garcia\repos\AdventureWorksLegacy\AdventureWorksLegacy\bin\BCrypt.xml

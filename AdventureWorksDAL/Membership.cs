@@ -50,11 +50,13 @@ namespace AdventureWorksDAL
                 {
                     usr.UserId = (int)rdr["UserID"];
                     usr.Email = (string)rdr["Email"];
-                    usr.PasswordHash = (string)rdr["PasswordHash"];
+                    usr.PasswordHash = rdr["PasswordHash"].ToString().Trim();
                     usr.PasswordSalt = (string)rdr["PasswordSalt"];
                     usr.CreatedDate = (DateTime)rdr["CreatedDate"];
                     usr.ModifiedDate = (DateTime)rdr["ModifiedDate"];
                     usr.Status = (UserStatus)rdr["Status"];
+                    usr.FirstName = (string)rdr["FirstName"];
+                    usr.LastName = (string)rdr["LastName"];
                 }
             }
             finally

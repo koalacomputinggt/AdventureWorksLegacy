@@ -79,17 +79,24 @@ namespace AdventureWorksPresenters
             return subCategoryId;
         }
 
-        public User AuthenticateUser(string email, string pwd, bool isPageValid)
+        public void AuthenticateUser(string email, string pwd, bool isPageValid)
         {
             if (isPageValid)
             {
                 Membership membership = new Membership();
                 User userInfo = new User();
+                LoginResult loginResult = membership.AuthenticateUser(email, pwd);
 
-                userInfo = membership.GetUser(email);
+                if (loginResult.LoginStatus == LoginStatus.LoggedOn)
+                {
+                    view.UserInfo = loginResult.UserInfo;
+                    view.IsUserAuthenticated = true;
+                    //view.LoginMessage = ""; //TODO
+                }
 
-                return userInfo;
             }
+
+            return;
         }
 
 	    private IDefaultView view;

@@ -13,5 +13,6 @@ namespace AdventureWorksPresenters
         bool CacheEnabled { set; get; }
         void AttachPresenter(DefaultPresenter presenter);
         bool IsUserAuthenticated { set; get; }
+        User UserInfo { set; get; }
     }
 }

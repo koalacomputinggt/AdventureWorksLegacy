@@ -34,11 +34,6 @@
             </p>
             <br />
         </div>
-        <div>
-            <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TxtPwd" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:Button ID="BtnSignIn" runat="server" OnClick="BtnSignIn_Click" />
-        </div>
     </div>
 
     <script type="html" id="tab-content">
@@ -50,6 +45,17 @@
     </script>
 
     <form id="form1" runat="server">
+        <div id="container-login">
+            <div runat="server" id="divAnonymous">
+                <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtPwd" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:Button ID="BtnSignIn" runat="server" OnClick="BtnSignIn_Click" Text="Sign In"/>
+            </div>
+            <div runat="server" id="divLogged" visible="false">
+                <asp:Label ID="LblLoggedUser" runat="server">Welcome user</asp:Label>
+                <asp:Button ID="BtnSignOut" runat="Server" OnClick="BtnSignOut_Click" Text="Sign Out"/>
+            </div>
+        </div>
         <div id="container-1">
             <ul class="tabssection">
             </ul>

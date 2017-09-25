@@ -19,6 +19,8 @@ namespace AdventureWorksModel
         private DateTime createdDate;
         private DateTime modifiedDate;
         private UserStatus status;
+        private string firstName;
+        private string lastName;
 
         public int UserId {
             get { return userId; }
@@ -51,6 +53,16 @@ namespace AdventureWorksModel
         public UserStatus Status {
             get { return status; }
             set { status = value; }
+        }
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
         }
     }
 }

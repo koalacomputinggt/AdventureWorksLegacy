@@ -29,6 +29,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Downloads\bcrypt.net-0.1\bin\BCrypt.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Downloads\UsingMemcached\UsingMemcached\UsingMemcached.Web\bin\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -54,6 +58,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="DefaultMvp.aspx" />
+    <Content Include="GenerateHash.aspx" />
     <Content Include="Global.asax" />
     <Content Include="script\DefaultMvp.js" />
     <Content Include="static\css\flora.accordion.css" />
@@ -139,6 +144,13 @@
     </Compile>
     <Compile Include="DefaultMvp.aspx.designer.cs">
       <DependentUpon>DefaultMvp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateHash.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GenerateHash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateHash.aspx.designer.cs">
+      <DependentUpon>GenerateHash.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
