@@ -64,7 +64,7 @@
         </div>
         <div id="all-content">
             <div>
-                <asp:DataList ID="DlProducts" runat="server" RepeatColumns="4">
+                <asp:DataList ID="DlProducts" runat="server" RepeatColumns="3" onitemcommand="DlProducts_ItemCommand">
                     <ItemTemplate>
                         <asp:Panel ID="Panel1" runat="server" Height="180px" Width="270px">
                             <div class="km-thumbnail">
@@ -80,9 +80,9 @@
                                     <asp:Label ID="lbl3" runat="server" Text='<%#Eval("ListPrice") %>'></asp:Label>
                                 </div>
                                 <div>
-                                    <%--<asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="False" Style="font-weight: 700;
+                                    <asp:LinkButton ID="LnkViewDetails" runat="server" Font-Underline="False" Style="font-weight: 700;
                                             color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("ProductID") %>'
-                                            BackColor="#FF9933">ViewDetails</asp:LinkButton>--%>
+                                            BackColor="#FF9933">ViewDetails</asp:LinkButton>
                                 </div>
                             </div>
                         </asp:Panel>

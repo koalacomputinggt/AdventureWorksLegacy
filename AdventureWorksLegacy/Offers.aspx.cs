@@ -29,7 +29,7 @@ namespace AdventureWorksLegacy
             OffersPresenter presenter = new OffersPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
-            presenter.GetProductsCurrentOffer(HttpContext.Current.Server.MapPath("~"));
+            presenter.GetProductsActiveOffer(HttpContext.Current.Server.MapPath("~"));
         }
 
         public void AttachPresenter(OffersPresenter _presenter)

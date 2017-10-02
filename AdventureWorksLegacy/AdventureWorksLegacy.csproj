@@ -61,6 +61,7 @@
     <Content Include="GenerateHash.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Offers.aspx" />
+    <Content Include="ProductDetails.aspx" />
     <Content Include="RequestForFinancing.aspx" />
     <Content Include="script\DefaultMvp.js" />
     <Content Include="static\css\flora.accordion.css" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="Offers.aspx.designer.cs">
       <DependentUpon>Offers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestForFinancing.aspx.cs">

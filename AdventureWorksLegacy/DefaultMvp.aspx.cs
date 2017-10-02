@@ -159,7 +159,13 @@ namespace AdventureWorksLegacy
         private bool isUserAuthenticated;
         private User userInfo;
 
-
+        protected void DlProducts_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "ViewDetails")
+            {
+                Response.Redirect("ProductDetails.aspx?prod_id=" + e.CommandArgument.ToString());
+            }
+        }
 
         protected void BtnSignIn_Click(object sender, EventArgs e)
         {

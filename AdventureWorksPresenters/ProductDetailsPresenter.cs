@@ -6,9 +6,9 @@ using AdventureWorksModel;
 
 namespace AdventureWorksPresenters
 {
-    public class OffersPresenter
+    public class ProductDetailsPresenter
     {
-        public OffersPresenter(IOffersView view)
+        public ProductDetailsPresenter(IProductDetailsView view)
         {
             if (view == null) throw new ArgumentNullException("view may not be null");
 
@@ -23,17 +23,17 @@ namespace AdventureWorksPresenters
             }
         }
 
-        public void GetProductsActiveOffer(string appRootPhysicalPath)
+        public void GetProduct(int productID, string appRootPhysicalPath)
         {
             AdventureWorksBLL.OnlineStore storeBll = new OnlineStore();
 
-            List<Product> productsList = new List<Product>();
+            Product product = new Product();
 
-            productsList = storeBll.GetProductsActiveOffer(view.CacheEnabled, appRootPhysicalPath);
+            product = storeBll.GetProductWithPhoto(productID, view.CacheEnabled, appRootPhysicalPath);
 
-            view.ProductsList = productsList;
+            view.Product = product;
         }
 
-        private IOffersView view;
+        private IProductDetailsView view;
     }
 }
