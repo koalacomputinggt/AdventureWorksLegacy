@@ -247,6 +247,86 @@ namespace AdventureWorksDAL
             return product;
         }
 
+        public List<AdventureWorksModel.Product> GetProductsCurrentOffer(string appRootPhysicalPath)
+        {
+            // declare the SqlDataReader, which is used in
+            // both the try block and the finally block
+            SqlDataReader rdr = null;
+
+            // create a connection object
+            string connString = ConfigurationManager.ConnectionStrings["AdventureWorksConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(connString);
+
+            // create a command object
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "uspGetProductsCurrentOffer";
+
+            List<AdventureWorksModel.Product> productsList = new List<AdventureWorksModel.Product>();
+
+            try
+            {
+                // open the connection
+                conn.Open();
+
+                // 1. get an instance of the SqlDataReader
+                rdr = cmd.ExecuteReader();
+
+                string thumbnailPhotoFileName = string.Empty;
+                string thumbnailPhotoUrl = string.Empty;
+                string tmpFolder = ConfigurationManager.AppSettings["TempFolder"].ToString();
+                string tmpThumbnailsFolder = ConfigurationManager.AppSettings["TempThumbnailsFolder"].ToString();
+                string thumbnailsLocation = Path.Combine(tmpFolder, tmpThumbnailsFolder);
+
+                // 2. add each Category object to return list
+                while (rdr.Read())
+                {
+                    AdventureWorksModel.Product product = new AdventureWorksModel.Product();
+                    product.ProductId = (int)rdr["ProductID"];
+                    product.Model = (string)rdr["Model"];
+                    product.Name = (string)rdr["Product"];
+                    product.ListPrice = (decimal)rdr["ListPrice"];
+                    product.Weight = (decimal)rdr["Weight"];
+                    product.UnitMeasure = (string)rdr["UnitMeasure"];
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(appRootPhysicalPath);
+                    sb.Append(@"\");
+                    sb.Append(thumbnailsLocation);
+                    sb.Append(@"\");
+                    sb.Append((string)rdr["ThumbnailPhotoFileName"]);
+                    thumbnailPhotoFileName = sb.ToString();
+
+                    if (!File.Exists(thumbnailPhotoFileName))
+                    {
+
+                        File.WriteAllBytes(thumbnailPhotoFileName, (byte[])rdr["ThumbnailPhoto"]);
+
+                    }
+                    product.ThumbnailPhotoFileName = thumbnailPhotoFileName;
+                    product.ThumbnailPhotoUrl = string.Concat("~", @"/", tmpFolder, @"/", tmpThumbnailsFolder, @"/", (string)rdr["ThumbnailPhotoFileName"]);
+
+                    productsList.Add(product);
+                }
+            }
+            finally
+            {
+                // 3. close the reader
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                // close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+
+            return productsList;
+        }
 
     }
 }

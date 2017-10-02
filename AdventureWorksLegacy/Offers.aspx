@@ -1,9 +1,9 @@
-<%@ Page Language="C#" AutoEventWireup="true" Codebehind="DefaultMvp.aspx.cs" Inherits="AdventureWorksLegacy.DefaultMvp" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Offers.aspx.cs" Inherits="AdventureWorksLegacy.Offers" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Default MVP</title>
+<head id="Head1" runat="server">
+    <title>Offers</title>
     <link href="static/css/flora.all.css" rel="stylesheet" type="text/css" />
     <link href="style/style.css" rel="stylesheet" type="text/css" />
 
@@ -11,57 +11,19 @@
 
     <script src="static/js/ui.core.js" type="text/javascript"></script>
 
-    <script src="static/js/ui.tabs.js" type="text/javascript"></script>
-
-    <script src="static/js/ui.accordion.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        var tabsDataRaw='<%=CategoryListTabData %>';
-        var currentCategoryIndex = '<%=CurrentCategoryIndex %>';
-        var currentSubCategoryIndex = '<%=CurrentSubCategoryIndex %>';
-        var subCategoriesData='<%=SubCategoryListAccordionData %>';
-    </script>
-
-    <script src="script/DefaultMvp.js" type="text/javascript"></script>
-
 </head>
 <body>
     <div id="header" style="float: right">
         <div>
             <br />
             <p>
-                HEADER
+                OFFERS
             </p>
             <br />
         </div>
     </div>
 
-    <script type="html" id="tab-content">
-        <div id="fragment-{{value}}" data-tab-id="{{value}}">
-            <h1>{{text}}</h1>
-            <ul id="accordion-{{value}}">		        
-	        </ul>
-        </div>
-    </script>
-
     <form id="form1" runat="server">
-        <div id="container-login">
-            <div runat="server" id="divAnonymous">
-                <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TxtPwd" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:Button ID="BtnSignIn" runat="server" OnClick="BtnSignIn_Click" Text="Sign In" />
-            </div>
-            <div runat="server" id="divLogged" visible="false">
-                <asp:Label ID="LblLoggedUser" runat="server">Welcome user</asp:Label>
-                <asp:Button ID="BtnSignOut" runat="Server" OnClick="BtnSignOut_Click" Text="Sign Out" />
-                <asp:HyperLink ID="LnkOffers" runat="server" NavigateUrl="~/Offers.aspx">Offers</asp:HyperLink>
-                <asp:HyperLink ID="LnkRequestForFinancing" runat="server" NavigateUrl="~/RequestForFinancing.aspx">Request for Financing</asp:HyperLink>
-            </div>
-        </div>
-        <div id="container-1">
-            <ul class="tabssection">
-            </ul>
-        </div>
         <div id="all-content">
             <div>
                 <asp:DataList ID="DlProducts" runat="server" RepeatColumns="4">

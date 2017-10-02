@@ -92,6 +92,24 @@ namespace AdventureWorksLegacy {
         protected global::System.Web.UI.WebControls.Button BtnSignOut;
         
         /// <summary>
+        /// LnkOffers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LnkOffers;
+        
+        /// <summary>
+        /// LnkRequestForFinancing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LnkRequestForFinancing;
+        
+        /// <summary>
         /// DlProducts control.
         /// </summary>
         /// <remarks>

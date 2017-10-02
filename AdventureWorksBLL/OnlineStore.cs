@@ -30,5 +30,12 @@ namespace AdventureWorksBLL
 
             return productDal.GetProduct(productId);
         }
+
+        public List<AdventureWorksModel.Product> GetProductsCurrentOffer(bool isCacheEnabled, string appRootPhysicalPath)
+        {
+            AdventureWorksDAL.Product productDal = new AdventureWorksDAL.Product();
+
+            return productDal.GetProductsCurrentOffer(appRootPhysicalPath);
+        }
     }
 }
