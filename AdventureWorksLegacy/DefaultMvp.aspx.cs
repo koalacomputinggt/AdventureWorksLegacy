@@ -175,6 +175,9 @@ namespace AdventureWorksLegacy
 
             presenter.AuthenticateUser(TxtEmail.Text.Trim(), TxtPwd.Text.Trim(), true);
 
+            Session["UserInfo"] = userInfo;
+            
+
             //TODO
             //if (this.LoginMessage != string.Empty)
             //{

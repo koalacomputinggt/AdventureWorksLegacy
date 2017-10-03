@@ -4,12 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>Request for Financing</title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <p>
+            A customer representative will communicate with you in order to process your request for financing.
+        </p>
     </div>
     </form>
 </body>

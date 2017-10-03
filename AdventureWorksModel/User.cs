@@ -4,12 +4,15 @@ using System.Text;
 
 namespace AdventureWorksModel
 {
+    [Serializable]
     public enum UserStatus
     {
         Active,
         Inactive,
         Locked
     }
+
+    [Serializable]
     public class User
     {
         private int userId;
