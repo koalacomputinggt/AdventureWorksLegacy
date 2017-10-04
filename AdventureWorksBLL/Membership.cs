@@ -84,5 +84,16 @@ namespace AdventureWorksBLL
 
         }
 
+        public UserPreference GetUserPreference(int userId)
+        {
+            AdventureWorksDAL.Membership membership = new AdventureWorksDAL.Membership();
+            UserPreference userPreference = new UserPreference();
+
+            userPreference = membership.GetUserPreference(userId);
+
+            return userPreference;
+        }
+
+
     }
 }
