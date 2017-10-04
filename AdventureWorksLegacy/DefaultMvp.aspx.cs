@@ -16,7 +16,6 @@ using AdventureWorksModel;
 using Memcached.ClientLibrary;
 using System.Web.Services;
 
-
 namespace AdventureWorksLegacy
 {
     public partial class DefaultMvp : System.Web.UI.Page, IDefaultView
@@ -31,6 +30,7 @@ namespace AdventureWorksLegacy
         private void InitDefaultView()
         {
             this.cacheEnabled = Convert.ToBoolean(Application["CacheEnabled"].ToString());
+            this.isUserAuthenticated = false;
             DefaultPresenter presenter = new DefaultPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
@@ -131,16 +131,71 @@ namespace AdventureWorksLegacy
             }
         }
 
+        public bool IsUserAuthenticated
+        {
+            set
+            {
+                isUserAuthenticated = value;
+                if (isUserAuthenticated)
+                {
+                    divAnonymous.Visible = false;
+                    divLogged.Visible = true;
+                    LblLoggedUser.Text = string.Format("Welcome {0} {1}!", this.UserInfo.FirstName, this.userInfo.LastName);
+                }
+                else
+                {
+                    divAnonymous.Visible = true;
+                    divLogged.Visible = false;
+                }
+            }
+            get
+            {
+                return isUserAuthenticated;
+            }
+        }
+
         private bool cacheEnabled;
         private DefaultPresenter presenter;
+        private bool isUserAuthenticated;
+        private User userInfo;
 
+        protected void DlProducts_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "ViewDetails")
+            {
+                Response.Redirect("ProductDetails.aspx?prod_id=" + e.CommandArgument.ToString());
+            }
+        }
 
-        //protected void BtnSubmit_OnClick(object sender, EventArgs e)
-        //{
-        //    if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
+        protected void BtnSignIn_Click(object sender, EventArgs e)
+        {
+            if (presenter == null) throw new FieldAccessException("presenter has not yet been initialized");
 
-        //    presenter.SubmitForm(Page.IsValid);
-        //}
+            AdventureWorksModel.User userInfo = new User();
+
+            presenter.AuthenticateUser(TxtEmail.Text.Trim(), TxtPwd.Text.Trim(), true);
+
+            Session["UserInfo"] = userInfo;
+            
+
+            //TODO
+            //if (this.LoginMessage != string.Empty)
+            //{
+
+            //}
+        }
+
+        public User UserInfo
+        {
+            set
+            {
+                userInfo = value;
+            }
+            get
+            {
+                return userInfo;
+            }
+        }
 
         private void TestCache()
         {
@@ -172,6 +227,13 @@ namespace AdventureWorksLegacy
 
             SockIOPool.GetInstance().Shutdown();
         }
+
+        protected void BtnSignOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         
     }

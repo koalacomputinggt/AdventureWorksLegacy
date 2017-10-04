@@ -28,6 +28,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Downloads\bcrypt.net-0.1\bin\BCrypt.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -36,6 +40,7 @@
     <Compile Include="Catalog.cs" />
     <Compile Include="OnlineStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Membership.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdventureWorksCaching\AdventureWorksCaching.csproj">

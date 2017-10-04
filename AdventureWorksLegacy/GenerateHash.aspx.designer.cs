@@ -12,12 +12,12 @@ namespace AdventureWorksLegacy {
     
     
     /// <summary>
-    /// DefaultMvp class.
+    /// GenerateHash class.
     /// </summary>
     /// <remarks>
     /// Auto-generated class.
     /// </remarks>
-    public partial class DefaultMvp {
+    public partial class GenerateHash {
         
         /// <summary>
         /// form1 control.
@@ -29,22 +29,13 @@ namespace AdventureWorksLegacy {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// divAnonymous control.
+        /// lblPwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAnonymous;
-        
-        /// <summary>
-        /// TxtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
+        protected global::System.Web.UI.WebControls.Label lblPwd;
         
         /// <summary>
         /// TxtPwd control.
@@ -56,6 +47,33 @@ namespace AdventureWorksLegacy {
         protected global::System.Web.UI.WebControls.TextBox TxtPwd;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// TxtHash control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TxtHash;
+        
+        /// <summary>
+        /// BtnGenerateHash control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnGenerateHash;
+        
+        /// <summary>
         /// BtnSignIn control.
         /// </summary>
         /// <remarks>
@@ -65,57 +83,12 @@ namespace AdventureWorksLegacy {
         protected global::System.Web.UI.WebControls.Button BtnSignIn;
         
         /// <summary>
-        /// divLogged control.
+        /// LblResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogged;
-        
-        /// <summary>
-        /// LblLoggedUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblLoggedUser;
-        
-        /// <summary>
-        /// BtnSignOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSignOut;
-        
-        /// <summary>
-        /// LnkOffers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LnkOffers;
-        
-        /// <summary>
-        /// LnkRequestForFinancing control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LnkRequestForFinancing;
-        
-        /// <summary>
-        /// DlProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DlProducts;
+        protected global::System.Web.UI.WebControls.Label LblResult;
     }
 }

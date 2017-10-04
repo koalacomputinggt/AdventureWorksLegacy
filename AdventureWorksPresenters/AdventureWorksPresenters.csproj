@@ -33,6 +33,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductDetailsPresenter.cs" />
+    <Compile Include="IProductDetailsView.cs" />
+    <Compile Include="OffersPresenter.cs" />
+    <Compile Include="IOffersView.cs" />
     <Compile Include="DefaultPresenter.cs" />
     <Compile Include="IDefaultView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

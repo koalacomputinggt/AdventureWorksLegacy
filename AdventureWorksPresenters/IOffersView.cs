@@ -6,13 +6,11 @@ using AdventureWorksBLL;
 
 namespace AdventureWorksPresenters
 {
-    public interface IDefaultView
+    public interface IOffersView
     {
        
         List<Product> ProductsList { set;  }
         bool CacheEnabled { set; get; }
-        void AttachPresenter(DefaultPresenter presenter);
-        bool IsUserAuthenticated { set; get; }
-        User UserInfo { set; get; }
+        void AttachPresenter(OffersPresenter presenter);
     }
 }

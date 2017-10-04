@@ -30,5 +30,36 @@ namespace AdventureWorksBLL
 
             return productDal.GetProduct(productId);
         }
+
+        public AdventureWorksModel.Product GetProductWithPhoto(int productId, bool isCacheEnabled, string appRootPhysicalPath) 
+        {
+            AdventureWorksDAL.Product productDal = new AdventureWorksDAL.Product();
+
+            return productDal.GetProductWithPhoto(productId, appRootPhysicalPath);
+        }
+
+        public List<AdventureWorksModel.Product> GetProductsActiveOffer(bool isCacheEnabled, string appRootPhysicalPath)
+        {
+            AdventureWorksDAL.Product productDal = new AdventureWorksDAL.Product();
+
+            Offer activeOffer = new Offer();
+            DateTime toDate = DateTime.Now;
+
+            activeOffer = productDal.GetSpecialOffer(toDate);
+            if (activeOffer != null)
+            {
+                List<AdventureWorksModel.Product> productsList = productDal.GetProductsSpecialOffer(activeOffer.SpecialOfferId, appRootPhysicalPath);
+                foreach (AdventureWorksModel.Product product in productsList)
+                {
+                    product.ListPrice = product.ListPrice - (product.ListPrice * activeOffer.DiscountPct);
+                }
+
+                return productsList;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
