@@ -13,7 +13,6 @@ using System.Web.UI.HtmlControls;
 using AdventureWorksPresenters;
 using AdventureWorksModel;
 
-using Memcached.ClientLibrary;
 using System.Web.Services;
 
 namespace AdventureWorksLegacy
@@ -197,7 +196,7 @@ namespace AdventureWorksLegacy
             }
         }
 
-        private void TestCache()
+        /*private void TestCache()
         {
             string cacheHostPort = ConfigurationManager.AppSettings["CacheHostPort"].ToString();
 
@@ -226,7 +225,7 @@ namespace AdventureWorksLegacy
             object returnObj = mc.Get("best_dev");
 
             SockIOPool.GetInstance().Shutdown();
-        }
+        }*/
 
         protected void BtnSignOut_Click(object sender, EventArgs e)
         {
