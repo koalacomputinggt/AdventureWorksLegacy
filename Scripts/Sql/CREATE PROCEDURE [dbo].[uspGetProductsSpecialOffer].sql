@@ -1,7 +1,7 @@
 USE [AdventureWorks]
 GO
 
-/****** Object:  StoredProcedure [dbo].[uspGetProductsSpecialOffer]    Script Date: 02/10/2017 12:08:12 ******/
+/****** Object:  StoredProcedure [dbo].[uspGetProductsSpecialOffer]    Script Date: 04/10/2017 11:06:53 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -17,7 +17,7 @@ BEGIN
 	-- List out all Products for a particular special offer
 	SELECT P.ProductID, 
 		ISNULL(PM.Name,'') AS Model, P.Name AS Product, P.ListPrice AS ListPrice, 
-		ISNULL(P.[Weight],0) AS [Weight], ISNULL(UM.Name,'') AS UnitMeasure, 
+		ISNULL(P.[Weight],0) AS [Weight], ISNULL(UM.Name,'') AS UnitMeasure, P.Color,
 		PP.ThumbNailPhoto, PP.ThumbnailPhotoFileName, SO.DiscountPct
 	FROM Production.Product AS P
 		FULL JOIN Production.ProductModel AS PM ON PM.ProductModelID = P.ProductModelID
