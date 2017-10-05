@@ -1,6 +1,7 @@
 .km-thumbnail
 {
-	padding-top:30px;
+	padding-top:20px;
+	padding-bottom:10px;
 	cursor:pointer;
 	text-align:center;
 }

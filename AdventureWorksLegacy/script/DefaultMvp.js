@@ -48,12 +48,16 @@ function addSubCategoryContent(accordionData, layout){
 
 function selectSubCategory(){
     var subCategoryIndex = $(this).attr("data-accordion-index");
-    document.location ='DefaultMvp.aspx?categoryIndex='+currentCategoryIndex+"&subCategoryIndex="+subCategoryIndex;
+    document.getElementById("frmMVP").action ='DefaultMvp.aspx?categoryIndex='+currentCategoryIndex+"&subCategoryIndex="+subCategoryIndex;
+   //__doPostBack('scrippostback','');
+    document.getElementById("frmMVP").submit();
 }
 
 function selectCategory(ev){
     var categoryIndex =  $(this).attr("data-tab-index");
-    document.location ='DefaultMvp.aspx?categoryIndex='+categoryIndex;
+    document.getElementById("frmMVP").action ='DefaultMvp.aspx?categoryIndex='+categoryIndex;
+    document.getElementById("frmMVP").submit();
+    //__doPostBack('scrippostback2','');
 }
         
 function getTabContentLayout(dataTabItem){

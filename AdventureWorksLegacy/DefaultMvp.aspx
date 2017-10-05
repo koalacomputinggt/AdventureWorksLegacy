@@ -22,7 +22,7 @@
         var subCategoriesData='<%=SubCategoryListAccordionData %>';
     </script>
 
-    <script src="script/DefaultMvp.js" type="text/javascript"></script>
+    
 
 </head>
 <body>
@@ -44,7 +44,8 @@
         </div>
     </script>
 
-    <form id="form1" runat="server">
+    <form id="frmMVP" method="post" runat="server">
+    
         <div id="container-login">
             <div runat="server" id="divAnonymous">
                 <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
@@ -62,6 +63,7 @@
             <ul class="tabssection">
             </ul>
         </div>
+        <asp:HiddenField ID="hdnIsUserAuthenticated" runat="server" />
         <div id="all-content">
             <div>
                 <asp:DataList ID="DlProducts" runat="server" RepeatColumns="3" onitemcommand="DlProducts_ItemCommand">
@@ -91,5 +93,6 @@
             </div>
         </div>
     </form>
+    <script src="script/DefaultMvp.js" type="text/javascript"></script>
 </body>
 </html>
