@@ -37,13 +37,22 @@ function addSubCategoryContent(accordionData, layout){
         if(i==parseInt(currentSubCategoryIndex)){
           divItem.append($("#all-content").clone().html());
            $("#all-content").empty();
+           
+           
          }
         aItem.click(selectSubCategory);        
         liItem.append(aItem);
         liItem.append(divItem);
         layout.append(liItem);
+        divItem.find(".km-detail-action-link").click(goToDetails);
     }
 
+}
+
+function goToDetails(ev){
+    var url='ProductDetails.aspx?prod_id=';
+    var prodId=$(this).attr('data-product-id');
+    document.location=url+prodId;
 }
 
 function selectSubCategory(){

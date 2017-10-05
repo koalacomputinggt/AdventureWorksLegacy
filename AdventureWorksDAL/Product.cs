@@ -292,7 +292,7 @@ namespace AdventureWorksDAL
                 {
                     product.ProductId = (int)rdr["ProductID"];
                     product.Model = (string)rdr["Model"];
-                    product.Name = (string)rdr["Name"];
+                    product.Name = (string)rdr["Product"];
                     product.ListPrice = (decimal)rdr["ListPrice"];
                     product.Weight = (decimal)rdr["Weight"];
                     product.UnitMeasure = (string)rdr["UnitMeasure"];

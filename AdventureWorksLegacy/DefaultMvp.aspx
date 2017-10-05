@@ -82,9 +82,10 @@
                                     <asp:Label ID="lbl3" runat="server" Text='<%#Eval("ListPrice") %>'></asp:Label>
                                 </div>
                                 <div>
-                                    <asp:LinkButton ID="LnkViewDetails" runat="server" Font-Underline="False" Style="font-weight: 700;
+                                <input type="button" class="km-detail-action-link" data-product-id='<%#Eval("ProductID") %>' value="View details"/>
+                                    <%--<asp:LinkButton ID="LnkViewDetails" runat="server" Font-Underline="False" Style="font-weight: 700;
                                             color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("ProductID") %>'
-                                            BackColor="#FF9933">ViewDetails</asp:LinkButton>
+                                            BackColor="#FF9933">ViewDetails</asp:LinkButton>--%>
                                 </div>
                             </div>
                         </asp:Panel>
