@@ -23,14 +23,27 @@
     </script>
 
     
-
+    <style type="text/css">
+        #container-login{
+            padding-bottom:10px;
+            float:right;
+            margin:10px 50px;
+        }
+        
+        .km-button{
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        
+       
+    </style>
 </head>
 <body>
     <div id="header" style="float: right">
         <div>
             <br />
             <p>
-                HEADER
+                
             </p>
             <br />
         </div>
@@ -50,13 +63,13 @@
             <div runat="server" id="divAnonymous">
                 <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
                 <asp:TextBox ID="TxtPwd" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:Button ID="BtnSignIn" runat="server" OnClick="BtnSignIn_Click" Text="Sign In" />
+                <asp:Button ID="BtnSignIn" class="km-button" runat="server" OnClick="BtnSignIn_Click" Text="Sign In" />
             </div>
             <div runat="server" id="divLogged" visible="false">
                 <asp:Label ID="LblLoggedUser" runat="server">Welcome user</asp:Label>
-                <asp:Button ID="BtnSignOut" runat="Server" OnClick="BtnSignOut_Click" Text="Sign Out" />
-                <asp:HyperLink ID="LnkOffers" runat="server" NavigateUrl="~/Offers.aspx">Offers</asp:HyperLink>
-                <asp:HyperLink ID="LnkRequestForFinancing" runat="server" NavigateUrl="~/RequestForFinancing.aspx">Request for Financing</asp:HyperLink>
+                <asp:Button ID="BtnSignOut" class="km-button" runat="Server" OnClick="BtnSignOut_Click" Text="Sign Out" />
+                <asp:HyperLink ID="LnkOffers" class="km-button" runat="server" NavigateUrl="~/Offers.aspx">Offers</asp:HyperLink>
+                <asp:HyperLink ID="LnkRequestForFinancing" class="km-button" runat="server" NavigateUrl="~/RequestForFinancing.aspx">Request for Financing</asp:HyperLink>
             </div>
         </div>
         <div id="container-1">
@@ -82,7 +95,7 @@
                                     <asp:Label ID="lbl3" runat="server" Text='<%#Eval("ListPrice") %>'></asp:Label>
                                 </div>
                                 <div>
-                                <input type="button" class="km-detail-action-link" data-product-id='<%#Eval("ProductID") %>' value="View details"/>
+                                <input type="button" class="km-detail-action-link km-button" data-product-id='<%#Eval("ProductID") %>' value="View details"/>
                                     <%--<asp:LinkButton ID="LnkViewDetails" runat="server" Font-Underline="False" Style="font-weight: 700;
                                             color: Black" CommandName="ViewDetails" CommandArgument='<%#Eval("ProductID") %>'
                                             BackColor="#FF9933">ViewDetails</asp:LinkButton>--%>

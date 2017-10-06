@@ -4,12 +4,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Offers</title>
-    <link href="static/css/flora.all.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 369px;
+        }
+    </style>
+     <link href="static/css/flora.all.css" rel="stylesheet" type="text/css" />
     <link href="style/style.css" rel="stylesheet" type="text/css" />
 
     <script src="static/js/jquery-1.2.4b.js" type="text/javascript"></script>
 
     <script src="static/js/ui.core.js" type="text/javascript"></script>
+    <style type="text/css">
+        .km-button{           
+            padding:10px 20px;           
+        }
+        .km-content{
+            text-align:center;
+        }
+        .product-content{
+             margin-left:auto; 
+            margin-right:auto;
+        }
+    </style>
 
 </head>
 <body>
@@ -50,6 +72,7 @@
                         </asp:Panel>
                     </ItemTemplate>
                 </asp:DataList>
+                 <asp:Button ID="btnBack" class="km-button" runat="server" Text="Back" OnClick="btnBack_Click"/>
             </div>
         </div>
     </form>

@@ -62,5 +62,10 @@ namespace AdventureWorksLegacy
 
         private bool cacheEnabled;
         private OffersPresenter presenter;
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DefaultMvp.aspx");
+        }
     }
 }

@@ -15,11 +15,29 @@
             width: 369px;
         }
     </style>
+     <link href="static/css/flora.all.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="static/js/jquery-1.2.4b.js" type="text/javascript"></script>
+
+    <script src="static/js/ui.core.js" type="text/javascript"></script>
+    <style type="text/css">
+        .km-button{           
+            padding:10px 20px;           
+        }
+        .km-content{
+            text-align:center;
+        }
+        .product-content{
+             margin-left:auto; 
+            margin-right:auto;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table class="style1">
+        <div class="km-content">
+            <table class="product-content">
                 <tr>
                     <td class="style2">
                         <asp:Image ID="ImgLargePhoto" runat="server" Height="361px" Width="369px" />
@@ -48,7 +66,9 @@
                     </td>
                 </tr>
             </table>
+            <asp:Button ID="btnBack" class="km-button" runat="server" Text="Back" OnClick="btnBack_Click"/>
         </div>
+        
     </form>
 </body>
 </html>
