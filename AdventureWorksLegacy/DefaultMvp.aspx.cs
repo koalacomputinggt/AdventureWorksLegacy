@@ -29,7 +29,6 @@ namespace AdventureWorksLegacy
         private void InitDefaultView()
         {
             this.cacheEnabled = Convert.ToBoolean(Application["CacheEnabled"].ToString());
-            this.isUserAuthenticated = false;
             DefaultPresenter presenter = new DefaultPresenter(this);
             this.AttachPresenter(presenter);
             presenter.InitView(IsPostBack);
@@ -63,9 +62,6 @@ namespace AdventureWorksLegacy
             }
         }
 
-        
-
-       
         public List<Product> ProductsList
         {
             set
@@ -134,8 +130,9 @@ namespace AdventureWorksLegacy
         {
             set
             {
-                isUserAuthenticated = value;
-                if (isUserAuthenticated)
+                hdnIsUserAuthenticated.Value = Convert.ToString(value);
+              
+                if (value)
                 {
                     divAnonymous.Visible = false;
                     divLogged.Visible = true;
@@ -149,13 +146,15 @@ namespace AdventureWorksLegacy
             }
             get
             {
-                return isUserAuthenticated;
+                if (hdnIsUserAuthenticated.Value == null) 
+                    return false;
+                else
+                    return Convert.ToBoolean(hdnIsUserAuthenticated.Value);
             }
         }
 
         private bool cacheEnabled;
         private DefaultPresenter presenter;
-        private bool isUserAuthenticated;
         private User userInfo;
 
         protected void DlProducts_ItemCommand(object source, DataListCommandEventArgs e)

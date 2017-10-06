@@ -37,23 +37,36 @@ function addSubCategoryContent(accordionData, layout){
         if(i==parseInt(currentSubCategoryIndex)){
           divItem.append($("#all-content").clone().html());
            $("#all-content").empty();
+           
+           
          }
         aItem.click(selectSubCategory);        
         liItem.append(aItem);
         liItem.append(divItem);
         layout.append(liItem);
+        divItem.find(".km-detail-action-link").click(goToDetails);
     }
 
 }
 
+function goToDetails(ev){
+    var url='ProductDetails.aspx?prod_id=';
+    var prodId=$(this).attr('data-product-id');
+    document.location=url+prodId;
+}
+
 function selectSubCategory(){
     var subCategoryIndex = $(this).attr("data-accordion-index");
-    document.location ='DefaultMvp.aspx?categoryIndex='+currentCategoryIndex+"&subCategoryIndex="+subCategoryIndex;
+    document.getElementById("frmMVP").action ='DefaultMvp.aspx?categoryIndex='+currentCategoryIndex+"&subCategoryIndex="+subCategoryIndex;
+   //__doPostBack('scrippostback','');
+    document.getElementById("frmMVP").submit();
 }
 
 function selectCategory(ev){
     var categoryIndex =  $(this).attr("data-tab-index");
-    document.location ='DefaultMvp.aspx?categoryIndex='+categoryIndex;
+    document.getElementById("frmMVP").action ='DefaultMvp.aspx?categoryIndex='+categoryIndex;
+    document.getElementById("frmMVP").submit();
+    //__doPostBack('scrippostback2','');
 }
         
 function getTabContentLayout(dataTabItem){

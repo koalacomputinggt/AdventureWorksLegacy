@@ -154,7 +154,7 @@ namespace AdventureWorksDAL
             return usrProfile;
         }
 
-        public AdventureWorksModel.UserPreference GetUserPreference(int userId)
+        public UserPreference GetUserPreference(int userId)
         {
             // declare the SqlDataReader, which is used in
             // both the try block and the finally block

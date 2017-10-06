@@ -22,7 +22,7 @@ namespace AdventureWorksLegacy
             {
                 try
                 {
-                    int productId = Convert.ToInt16(Request.QueryString["prod_id"]);
+                    int productId = Convert.ToInt32(Request.QueryString["prod_id"]);
                     InitProductDetailsView(productId);
                 }
                 catch (Exception ex)

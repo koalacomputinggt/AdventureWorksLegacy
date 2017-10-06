@@ -30,7 +30,7 @@
   <ItemGroup>
     <Reference Include="BCrypt, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\bcrypt.net-0.1\bin\BCrypt.dll</HintPath>
+      <HintPath>..\Dlls\BCrypt.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
